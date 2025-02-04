@@ -10,24 +10,26 @@ import { BrowserRouter } from "react-router";
 function App() {
   return (
     <BrowserRouter>
-      <ThemeProvider>
-        <div className=" bg-white dark:bg-gray-950 dark:text-white font-inter px-5">
-          <div className="flex flex-col md:flex-row max-w-6xl mx-auto">
-            <Sidebar />
+    
+    <ThemeProvider>
+      <div className=" bg-white dark:bg-gray-950 dark:text-white font-inter px-5">
+        <div className="flex flex-col md:flex-row max-w-6xl mx-auto">
+          <Sidebar />
 
-            <div className="w-full space-y-4 flex flex-col justify-center">
-              <About />
-              <div className="flex flex-col gap-4">
-                <h2>Projects</h2>
-                {projects.map((project, index) => (
-                  <Projects key={index} project={project} />
-                ))}
-              </div>
-              <Experience />
+          <div className="w-full space-y-4 flex flex-col justify-center">
+            <About />
+            <div className="flex flex-col gap-4">
+              <h2 className="text-base">Projects</h2>
+              {projects.map((project, index) => (
+                <Projects key={index} project={project} />
+              ))}
             </div>
+            <Experience />
           </div>
+
         </div>
-      </ThemeProvider>
+      </div>
+    </ThemeProvider>
     </BrowserRouter>
   );
 }

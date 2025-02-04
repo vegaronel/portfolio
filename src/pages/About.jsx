@@ -4,7 +4,7 @@ function About() {
   return (
     <div id="about">
       <div className="md:h-screen h-auto flex flex-col md:justify-center sm:justify-start py-4 md:py-0 space-y-2">
-        <h2>About</h2>
+        <h2 className="text-md">About</h2>
         <p className="text-2xl font-semibold">Hi, I’m Ronel Vega.</p>
         <p className="">
           I’m a passionate{" "}
@@ -17,10 +17,10 @@ function About() {
           expand my skill set.
         </p>
         <p>
-          When I’m not coding, you can find me <span>jogging</span> to stay active and
-          maintain a healthy balance between work and wellness. I believe that a
-          strong mind and body go hand in hand, and this mindset helps me stay
-          focused and creative in my work.
+          When I’m not coding, you can find me <span>jogging</span> to stay
+          active and maintain a healthy balance between work and wellness. I
+          believe that a strong mind and body go hand in hand, and this mindset
+          helps me stay focused and creative in my work.
         </p>
       </div>
     </div>
