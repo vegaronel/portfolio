@@ -3,23 +3,35 @@
 @tailwind utilities;
 
 /* ... */
+/* Add smooth transitions for dark mode */
+html {
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+h1, h2, h3, p {
+  @apply transition-colors duration-300;
+}
+/* Fades background when theme changes */
+body {
+  @apply transition-colors duration-500 bg-white dark:bg-gray-900;
+}
+
 
 h1 {
-  @apply text-slate-100 text-4xl font-bold;
+  @apply text-slate-900 text-4xl font-bold dark:text-slate-200;
 }
 
 h2 {
-  @apply text-slate-300 text-3xl font-semibold;
+  @apply text-slate-600 text-3xl font-semibold dark:text-slate-400;
 }
 
 h3 {
-  @apply text-slate-400 text-2xl font-medium;
+  @apply text-slate-800 text-2xl font-medium dark:text-slate-500;
 }
 
 p {
-  @apply text-slate-500 text-base;
+  @apply text-slate-600 text-base dark:text-slate-400;
 }
-
 
 @layer base {
   :root {

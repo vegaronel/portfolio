@@ -1,25 +1,37 @@
-
 const projects = [
-    {
-      name: "E-commerce Platform",
-      description: "A full-stack e-commerce solution with user authentication, product management, and order processing.",
-      technologies: ["React", "Node.js", "Express", "MongoDB", "Redux"],
-      github: "https://github.com/yourusername/ecommerce-platform",
-      liveDemo: "https://your-ecommerce-demo.com",
-    },
-    {
-      name: "Weather App",
-      description: "A responsive weather application that provides real-time weather data and forecasts.",
-      technologies: ["React", "OpenWeather API", "Tailwind CSS"],
-      github: "https://github.com/yourusername/weather-app",
-      liveDemo: "https://your-weather-app-demo.com",
-    },
-    {
-      name: "Task Manager",
-      description: "A collaborative task management tool with real-time updates and team features.",
-      technologies: ["Vue.js", "Firebase", "Vuex"],
-      github: "https://github.com/yourusername/task-manager",
-      liveDemo: "https://your-task-manager-demo.com",
-    },
-  ]
-  export default projects;
+  {
+    name: "Permaculture Web App",
+    description:
+      "A web application designed to help household families in Brgy. Guinacutan, Vinzons, Camarines Norte. It includes Arduino integration to detect if plants need watering, allows users to add new plants with estimated harvest times, and features a weather API, plant disease detection, and a forum for user communication.",
+    technologies: ["Node.js", "Express", "Bootstrap", "EJS", "Arduino"],
+    github: "https://github.com/vegaronel/permaculture",
+    liveDemo: "", // Add your live demo link here if available
+  },
+  {
+    name: "Tell No One",
+    description:
+      "A random messaging web app where users can share their link to receive anonymous messages. It ensures complete anonymity for the sender.",
+    technologies: ["Node.js", "Express", "Bootstrap", "EJS", "Postgres"],
+    github: "https://github.com/vegaronel/nc-project",
+    liveDemo: "https://nc-project-ycrc.onrender.com/",
+  },
+  {
+    name: "Food Recipe Sharing",
+    description:
+      "A blog-like platform where users can share and explore food recipes. It functions like a social media platform for food enthusiasts.",
+    technologies: [
+      "Node.js",
+      "Express",
+      "React.js",
+      "Postgres",
+      "Supabase",
+      "Tailwind CSS",
+      "shadcn",
+    ],
+    github: "https://github.com/vegaronel/food-recipe-sharing",
+    liveDemo: "https://food-recipe-sharing-one.vercel.app/",
+    status: "In-progress"
+  },
+];
+
+export default projects;

@@ -13,10 +13,16 @@ import { ExternalLink, Github } from "lucide-react";
 
 function Projects({ project }) {
   return (
-    <div id="projects" className="">
-      <Card className="w-full">
+    <section id="projects">
+      <Card className="w-full dark:hover:bg-slate-800 hover:bg-slate-200  cursor-pointer transition-all">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold">{project.name}</CardTitle>
+          <div className="flex justify-between">
+            <CardTitle className="text-2xl font-bold">
+              {project.name}{" "}
+            </CardTitle>
+            <span className="text-sm font-light">{project.status}</span>
+          </div>
+
           <CardDescription>{project.description}</CardDescription>
         </CardHeader>
         <CardContent>
@@ -42,7 +48,7 @@ function Projects({ project }) {
           </Button>
         </CardFooter>
       </Card>
-    </div>
+    </section>
   );
 }
 
