@@ -1,15 +1,13 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Home, Briefcase, Mail } from "lucide-react";
-import { useState, useEffect, useContext } from "react";
-import { Moon, Sun } from "lucide-react";
+import { Facebook, Linkedin, Github,Home, Briefcase, Mail, Moon, Sun, } from "lucide-react";
+import { useEffect, useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
-const navItems = [
-  { icon: Home, label: "About", id: "about" },
-  { icon: Briefcase, label: "Projects", id: "projects" },
-  { icon: Mail, label: "Experience", id: "experience" },
-];
+import { Switch } from "@/components/ui/switch";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { navItems, links } from "../helper/Sidebar.js";
+
 
 function Sidebar() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
@@ -33,14 +31,15 @@ function Sidebar() {
 
   return (
     <div className="text-slate-50 w-full md:sticky sm:static top-0 md:h-screen sm:h-auto flex flex-col md:mt-0 mt-6 justify-center space-y-5">
-      <button
-        className="text-slate-900 dark:text-slate-50"
-        onClick={() => {
-          setDarkMode(!darkMode);
-        }}
-      >
-        {darkMode ? <Sun /> : <Moon />}
-      </button>
+      <div className="flex items-center gap-2">
+        <Switch
+          checked={darkMode}
+          onCheckedChange={() => {
+            setDarkMode(!darkMode);
+          }}
+        />
+        {darkMode ? <Moon /> : <Sun className="text-slate-950" />}
+      </div>
       <h1 className="text-5xl font-semibold">Ronel G. Vega</h1>
       <h3 className="">Full Stack Developer</h3>
       <p className="">
@@ -64,6 +63,22 @@ function Sidebar() {
           </div>
         </ScrollArea>
       </nav>
+
+      <div className="flex gap-3">
+        {links.map((item, index) => (
+          <a
+          key={index}
+            href="https://web.facebook.com/vega.ronel"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Avatar >
+              <AvatarImage  src={<item.img />} />
+              <AvatarFallback className="bg-slate-800 dark:bg-slate-200">{<item.img className="dark:text-slate-800 text-slate-50" />}</AvatarFallback>
+            </Avatar>
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
