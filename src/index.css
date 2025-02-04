@@ -32,8 +32,6 @@ h3 {
 p {
   @apply text-slate-600 text-base dark:text-slate-400;
 }
-
-
 @layer base {
   :root {
 

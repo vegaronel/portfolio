@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion"
+
 import {
   Card,
   CardContent,
@@ -13,7 +15,13 @@ import { ExternalLink, Github } from "lucide-react";
 
 function Projects({ project }) {
   return (
-    <section id="projects">
+    <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false }} // Allow animations to replay
+    transition={{ duration: 0.5 }}
+    className="project-item mt-4"
+    id="projects">
       <Card className="w-full border-0 bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900 duration-400 hover:bg-slate-200  cursor-pointer transition-all hover:shadow-2xl shadow-purple-50">
         <CardHeader>
           <div className="flex justify-between">
@@ -48,7 +56,7 @@ function Projects({ project }) {
           </Button>
         </CardFooter>
       </Card>
-    </section>
+    </motion.div>
   );
 }
 
