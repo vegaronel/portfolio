@@ -14,7 +14,7 @@ import { ExternalLink, Github } from "lucide-react";
 function Projects({ project }) {
   return (
     <section id="projects">
-      <Card className="w-full border-0 dark:hover:bg-slate-900 duration-400 hover:bg-slate-200  cursor-pointer transition-all hover:shadow-2xl shadow-purple-50">
+      <Card className="w-full border-0 bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900 duration-400 hover:bg-slate-200  cursor-pointer transition-all hover:shadow-2xl shadow-purple-50">
         <CardHeader>
           <div className="flex justify-between">
             <CardTitle className="text-2xl font-bold">

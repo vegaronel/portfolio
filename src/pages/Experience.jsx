@@ -21,7 +21,7 @@ export default function Experience() {
       <h2 className="">Work Experience</h2>
       <div className="space-y-6 mt-3">
         {experiences.map((exp, index) => (
-          <Card key={index} className="w-full border-0 dark:hover:bg-slate-900 hover:bg-slate-200  cursor-pointer transition-all duration-400 hover:shadow-2xl shadow-purple-50">
+          <Card key={index} className="w-full border-0 dark:hover:bg-slate-900 hover:bg-slate-200 bg-slate-100 dark:bg-slate-950 cursor-pointer transition-all duration-400 hover:shadow-2xl shadow-purple-50">
             <CardHeader>
               <CardTitle className="text-xl">{exp.title}</CardTitle>
               <CardDescription className="text-base">
