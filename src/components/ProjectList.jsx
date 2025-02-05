@@ -23,7 +23,11 @@ function ProjectList({ project }) {
       className="project-item mt-4"
       id="projects"
     >
-      <Card className="w-full border-0 bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900 duration-400 hover:bg-slate-200  cursor-pointer transition-all hover:shadow-2xl shadow-purple-50">
+      <Card className="w-full bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900 duration-400 hover:bg-slate-200  cursor-pointer transition-all 
+    
+      shadow-[0_0_8px_rgba(8,_112,_184,_0.7)]
+      hover:shadow-[0_0_15px_rgba(8,_112,_184,_0.7)]
+      ">
         <CardHeader>
           <div className="flex justify-between">
             <CardTitle className="text-2xl font-bold">

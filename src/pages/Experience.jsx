@@ -1,6 +1,5 @@
 import ExperienceList from "@/components/ExperienceList";
 import ReusableMotion from "@/components/ReusableMotion";
-
 export default function Experience() {
   return (
     <ReusableMotion>
