@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 
 function ProjectList({ project }) {
+  console.log(project);
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -23,12 +24,14 @@ function ProjectList({ project }) {
       className="project-item mt-4"
       id="projects"
     >
-      <Card className="w-full bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900 duration-400 hover:bg-slate-200  cursor-pointer transition-all 
-        dark:shadow-[0_0_8px_rgba(8,_112,_184,_0.7)]
-        dark:hover:shadow-[0_0_15px_rgba(8,_112,_184,_0.7)]
-        shadow-[0_0_8px_#4a5568]
-        hover:shadow-[0_0_15px_#a0aec0]
-      ">
+      <Card
+        className="w-full bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900 duration-400 hover:bg-slate-200  cursor-pointer transition-all 
+          dark:shadow-[0_0_8px_rgba(8,_112,_184,_0.7)]
+          dark:hover:shadow-[0_0_15px_rgba(8,_112,_184,_0.7)]
+          shadow-[0_0_8px_#4a5568]
+          hover:shadow-[0_0_15px_#a0aec0]
+        "
+      >
         <CardHeader>
           <div className="flex justify-between">
             <CardTitle className="text-2xl font-bold">
