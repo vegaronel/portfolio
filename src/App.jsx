@@ -7,7 +7,6 @@ import Projects from "./pages/Projects";
 import ThemeProvider from "./context/ThemeContext";
 import { BrowserRouter } from "react-router";
 import Skills from "./pages/Skills";
-import Blocks from "./pages/Blocks";
 
 function App() {
   return (
@@ -21,10 +20,8 @@ function App() {
               <Skills />
               <Projects />
               <Experience />
-       
             </div>
           </div>
-          <Blocks />
         </div>
       </ThemeProvider>
     </BrowserRouter>
