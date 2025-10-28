@@ -5,7 +5,7 @@ const projects = [
       "A web application designed to help household families in Brgy. Guinacutan, Vinzons, Camarines Norte. It includes Arduino integration to detect if plants need watering, allows users to add new plants with estimated harvest times, and features a weather API, plant disease detection, and a forum for user communication.",
     technologies: ["Node.js", "Express", "Bootstrap", "EJS", "Arduino"],
     github: "https://github.com/vegaronel/permaculture",
-    liveDemo: "", // Add your live demo link here if available
+    liveDemo: "https://permaculture.onrender.com/", // Add your live demo link here if available
   },
   {
     name: "Tell No One",
