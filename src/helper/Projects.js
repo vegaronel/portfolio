@@ -1,6 +1,6 @@
 const projects = [
   {
-    name: "Permaculture Web App",
+    name: "Project Seed",
     description:
       "A web application designed to help household families in Brgy. Guinacutan, Vinzons, Camarines Norte. It includes Arduino integration to detect if plants need watering, allows users to add new plants with estimated harvest times, and features a weather API, plant disease detection, and a forum for user communication.",
     technologies: ["Node.js", "Express", "Bootstrap", "EJS", "Arduino"],
