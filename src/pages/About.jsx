@@ -1,10 +1,11 @@
 import ReusableMotion from "@/components/ReusableMotion";
 import { Button } from "@/components/ui/button";
+import SpotlightCard from "@/components/SpotlightCard";
 
 function About() {
   const quickFacts = [
     { label: "Projects Shipped", value: "3+" },
-    { label: "Focus", value: "React · Node · Supabase" },
+    { label: "Focus", value: "React · Node · Postgres" },
     { label: "Availability", value: "Open to remote roles" },
   ];
 
@@ -38,9 +39,10 @@ function About() {
 
         <div className="grid gap-3 sm:grid-cols-3">
           {quickFacts.map((fact) => (
-            <div
+            <SpotlightCard
               key={fact.label}
-              className="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 bg-white dark:bg-slate-950 shadow-sm"
+              className="custom-spotlight-card bg-white dark:bg-slate-950 shadow-sm"
+              spotlightColor="rgba(0, 229, 255, 0.2)"
             >
               <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
                 {fact.label}
@@ -48,7 +50,7 @@ function About() {
               <p className="text-xl font-semibold text-slate-900 dark:text-white">
                 {fact.value}
               </p>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
 
