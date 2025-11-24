@@ -4,21 +4,13 @@ import Sidebar from "./layouts/Sidebar";
 import ThemeProvider from "./context/ThemeContext";
 import { BrowserRouter } from "react-router";
 import Footer from "./layouts/Footer";
+import AboutSkeleton from "@/components/skeletons/AboutSkeleton";
+import SectionSkeleton from "@/components/skeletons/SectionSkeleton";
 
 const About = lazy(() => import("./pages/About"));
 const Skills = lazy(() => import("./pages/Skills"));
 const Projects = lazy(() => import("./pages/Projects"));
 const Experience = lazy(() => import("./pages/Experience"));
-
-const SectionFallback = ({ label }) => (
-  <div
-    role="status"
-    aria-live="polite"
-    className="h-32 w-full rounded-2xl bg-slate-100 dark:bg-slate-900 animate-pulse"
-  >
-    <span className="sr-only">{`Loading ${label} section`}</span>
-  </div>
-);
 
 function App() {
   return (
@@ -28,16 +20,16 @@ function App() {
           <div className="flex flex-col md:flex-row space-y-4">
             <Sidebar />
             <div className="w-full space-y-4 flex flex-col justify-center">
-              <Suspense fallback={<SectionFallback label="About" />}>
+              <Suspense fallback={<AboutSkeleton />}>
                 <About />
               </Suspense>
-              <Suspense fallback={<SectionFallback label="Skills" />}>
+              <Suspense fallback={<SectionSkeleton label="Skills" />}>
                 <Skills />
               </Suspense>
-              <Suspense fallback={<SectionFallback label="Projects" />}>
+              <Suspense fallback={<SectionSkeleton label="Projects" />}>
                 <Projects />
               </Suspense>
-              <Suspense fallback={<SectionFallback label="Experience" />}>
+              <Suspense fallback={<SectionSkeleton label="Experience" />}>
                 <Experience />
               </Suspense>
             </div>
