@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import {
   Card,
   CardContent,
@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import experiences from "@/helper/Experience";
+import experiences from "@/data/experience";
 
 function ExperienceList() {
   return (
@@ -46,4 +46,4 @@ function ExperienceList() {
   );
 }
 
-export default ExperienceList;
+export default memo(ExperienceList);

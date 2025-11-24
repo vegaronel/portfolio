@@ -1,4 +1,3 @@
-import React from "react";
 import ReusableMotion from "@/components/ReusableMotion";
 function About() {
   return (
