@@ -42,21 +42,21 @@ function About() {
 
             <div className="space-y-4">
               <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">
-                Hey, I'm Ronel Vega — a developer who obsesses over the details
-                that make interfaces feel alive.
+                Hey, I&rsquo;m Ronel Vega — a developer who obsesses over the
+                details that make interfaces feel alive.
               </h2>
               <p className="text-slate-600 dark:text-slate-300">
                 I help teams launch clean, fast, accessible experiences using
-                React and modern tooling. Whether it's building an anonymous
-                messaging platform or wiring up AI-powered job tracking
-                dashboards, I love translating ambiguous ideas into
+                React and modern tooling. Whether it&rsquo;s building an
+                anonymous messaging platform or wiring up AI-powered job
+                tracking dashboards, I love translating ambiguous ideas into
                 production-ready products.
               </p>
               <p className="text-slate-600 dark:text-slate-300">
-                Outside of code, you'll find me jogging to reset and reading
-                about interaction design—anything that sharpens focus. That
-                balance keeps me energized to deliver thoughtful, pixel-perfect
-                work.
+                Outside of code, you&rsquo;ll find me jogging to reset and
+                reading about interaction design—anything that sharpens focus.
+                That balance keeps me energized to deliver thoughtful,
+                pixel-perfect work.
               </p>
             </div>
           </div>

@@ -10,18 +10,17 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import experiences from "@/data/experience";
 import SpotlightCard from "@/components/SpotlightCard";
-import { cn } from "@/lib/utils";
 
 function ExperienceList() {
   return (
     <div>
       {experiences.map((exp, index) => (
         <SpotlightCard
+          key={`${exp.title}-${index}`}
           className="p-0 bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900"
           spotlightColor="rgba(0, 229, 255, 0.2)"
         >
           <Card
-            key={index}
             className="w-full bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900 duration-400 hover:bg-slate-200  cursor-pointer transition-all 
           dark:shadow-[0_0_8px_rgba(8,_112,_184,_0.7)]
           dark:hover:shadow-[0_0_15px_rgba(8,_112,_184,_0.7)]
