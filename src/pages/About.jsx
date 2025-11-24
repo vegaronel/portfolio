@@ -18,9 +18,7 @@ function About() {
     <ReusableMotion>
       <section id="about" className="space-y-6 md:py-12">
         <div className="space-y-3">
-          <p className="text-sm uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
-            About
-          </p>
+          <h2 className="text-base">About</h2>
           <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">
             Hey, I’m Ronel Vega — a developer who obsesses over the details that
             make interfaces feel alive.
