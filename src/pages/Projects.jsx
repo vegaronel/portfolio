@@ -1,4 +1,4 @@
-import ReusableMotion from "../components/ReusableMotion"; // Import the reusable component
+import ReusableMotion from "../components/ReusableMotion";
 import ProjectList from "@/components/ProjectList";
 import projects from "../helper/Projects";
 

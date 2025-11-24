@@ -13,17 +13,17 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider>
-        <div className="bg-white dark:bg-gray-950 dark:text-white font-inter px-5">
-          <div className="flex flex-col md:flex-row max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto bg-white dark:bg-gray-950 dark:text-white font-inter px-5">
+          <div className="flex flex-col md:flex-row space-y-4">
             <Sidebar />
             <div className="w-full space-y-4 flex flex-col justify-center">
               <About />
               <Skills />
               <Projects />
               <Experience />
-              <Footer />
             </div>
           </div>
+          <Footer />
         </div>
       </ThemeProvider>
     </BrowserRouter>
