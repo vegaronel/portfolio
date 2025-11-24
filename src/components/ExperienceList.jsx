@@ -10,13 +10,16 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import experiences from "@/data/experience";
 import SpotlightCard from "@/components/SpotlightCard";
+import { cn } from "@/lib/utils";
 
 function ExperienceList() {
   return (
     <div>
       {experiences.map((exp, index) => (
         <SpotlightCard
-          className="p-0 bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900"
+          className={cn(
+            "p-0 bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900"
+          )}
           spotlightColor="rgba(0, 229, 255, 0.2)"
         >
           <Card
