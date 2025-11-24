@@ -1,26 +1,14 @@
-import React from "react";
+import { useContext } from "react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Facebook, Linkedin, Github,Home, Briefcase, Mail, Moon, Sun, } from "lucide-react";
-import { useEffect, useContext } from "react";
-import { ThemeContext } from "../context/ThemeContext";
+import Moon from "lucide-react/icons/moon";
+import Sun from "lucide-react/icons/sun";
+import { ThemeContext } from "@/context/ThemeContext";
 import { Switch } from "@/components/ui/switch";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { navItems, links } from "../helper/Sidebar.js";
-
+import { navItems, links } from "@/data/navigation";
 
 function Sidebar() {
-  const { darkMode, setDarkMode } = useContext(ThemeContext);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
 
   const onNavItemClick = (id) => {
     const element = document.getElementById(id);
@@ -34,9 +22,7 @@ function Sidebar() {
       <div className="flex items-center gap-2">
         <Switch
           checked={darkMode}
-          onCheckedChange={() => {
-            setDarkMode(!darkMode);
-          }}
+          onCheckedChange={toggleTheme}
         />
         {darkMode ? <Moon /> : <Sun className="text-slate-950" />}
       </div>
@@ -65,18 +51,12 @@ function Sidebar() {
       </nav>
 
       <div className="flex gap-3">
-        {links.map((item, index) => (
-          <a
-          key={index}
-            href="https://web.facebook.com/vega.ronel"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Avatar >
-              <AvatarImage  src={<item.img />} />
-              <AvatarFallback className="bg-slate-800 dark:bg-slate-200">{<item.img className="dark:text-slate-800 text-slate-50" />}</AvatarFallback>
-            </Avatar>
-          </a>
+        {links.map(({ href, icon: Icon, label }) => (
+          <Button key={label} variant="outline" size="icon" asChild>
+            <a className="text-slate-950 dark:text-slate-50" href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+              <Icon className="h-4 w-4" />
+            </a>
+          </Button>
         ))}
       </div>
     </div>

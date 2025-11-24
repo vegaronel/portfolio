@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import {
   Card,
   CardContent,
@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import experiences from "@/data/experience";
 
 function ExperienceList() {
   return (
@@ -45,16 +46,4 @@ function ExperienceList() {
   );
 }
 
-export default ExperienceList;
-
-const experiences = [
-  {
-    title: "PHP Developer Intern",
-    company: "Praetorian Intelligence Inc.",
-    duration: "Summer 2024", // You can adjust this to the actual duration
-    description:
-      "Worked as an intern focusing on PHP development using the CodeIgniter framework. Contributed to web application development and gained hands-on experience with various web technologies.",
-    technologies: ["PHP", "CodeIgniter", "Bootstrap", "XAMPP", "jQuery"],
-  },
-  // You can add more experiences here if you have any
-];
+export default memo(ExperienceList);

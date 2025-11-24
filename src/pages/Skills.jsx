@@ -1,5 +1,4 @@
-import React from "react";
-import { skillIcons } from "../helper/Skills";
+import { skillIcons } from "@/data/skills";
 import ReusableMotion from "@/components/ReusableMotion";
 import SkillIconsList from "@/components/SkillIconsList";
 
