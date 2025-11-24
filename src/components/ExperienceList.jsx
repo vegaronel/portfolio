@@ -1,4 +1,5 @@
 import { memo } from "react";
+import ReusableMotion from "@/components/ReusableMotion";
 import {
   Card,
   CardContent,
@@ -14,9 +15,16 @@ function ExperienceList() {
   return (
     <div>
       {experiences.map((exp, index) => (
-        <Card
-          key={index}
-          className="w-full bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900 duration-400 hover:bg-slate-200  cursor-pointer transition-all 
+        <ReusableMotion
+          key={`${exp.title}-${index}`}
+          initial={{ opacity: 0, x: -25 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.4, delay: index * 0.15 }}
+          className="w-full"
+        >
+          <Card
+            className="w-full bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900 duration-400 hover:bg-slate-200 cursor-pointer transition-all 
           dark:shadow-[0_0_8px_rgba(8,_112,_184,_0.7)]
           dark:hover:shadow-[0_0_15px_rgba(8,_112,_184,_0.7)]
           shadow-[0_0_8px_#4a5568]
@@ -40,7 +48,8 @@ function ExperienceList() {
             </div>
           </CardContent>
           {index < experiences.length - 1 && <Separator className="my-4" />}
-        </Card>
+          </Card>
+        </ReusableMotion>
       ))}
     </div>
   );
