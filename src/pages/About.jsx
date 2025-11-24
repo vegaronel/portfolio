@@ -1,29 +1,89 @@
 import ReusableMotion from "@/components/ReusableMotion";
+import { Button } from "@/components/ui/button";
+
 function About() {
+  const quickFacts = [
+    { label: "Projects Shipped", value: "3+" },
+    { label: "Focus", value: "React · Node · Supabase" },
+    { label: "Availability", value: "Open to remote roles" },
+  ];
+
+  const values = [
+    "Design-first mindset rooted in accessibility.",
+    "Motion adds clarity, not distraction.",
+    "Iterate fast, measure, and polish.",
+  ];
+
   return (
     <ReusableMotion>
-      <div id="about">
-        <div className="md:h-screen h-auto flex flex-col md:justify-center sm:justify-start md:py-0 space-y-2">
-          <h2 className="text-md">About</h2>
-          <p className="text-2xl font-semibold">Hi, I’m Ronel Vega.</p>
-          <p className="">
-            I’m a passionate{" "}
-            <span className="font-bold">Full Stack Developer</span> with a love
-            for creating beautiful, functional websites using{" "}
-            <span className="font-bold">React</span>. I thrive on turning ideas
-            into reality through clean, efficient code and intuitive user
-            interfaces. My journey in web development is fueled by a constant
-            desire to learn and grow, and I’m always exploring new technologies
-            to expand my skill set.
+      <section id="about" className="space-y-6 md:py-12">
+        <div className="space-y-3">
+          <p className="text-sm uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
+            About
           </p>
-          <p>
-            When I’m not coding, you can find me <span>jogging</span> to stay
-            active and maintain a healthy balance between work and wellness. I
-            believe that a strong mind and body go hand in hand, and this
-            mindset helps me stay focused and creative in my work.
+          <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">
+            Hey, I’m Ronel Vega — a developer who obsesses over the details that
+            make interfaces feel alive.
+          </h2>
+          <p className="text-slate-600 dark:text-slate-300">
+            I help teams launch clean, fast, accessible experiences using React
+            and modern tooling. Whether it’s building an anonymous messaging
+            platform or wiring up AI-powered job tracking dashboards, I love
+            translating ambiguous ideas into production-ready products.
+          </p>
+          <p className="text-slate-600 dark:text-slate-300">
+            Outside of code, you’ll find me jogging to reset and reading about
+            interaction design—anything that sharpens focus. That balance keeps
+            me energized to deliver thoughtful, pixel-perfect work.
           </p>
         </div>
-      </div>
+
+        <div className="grid gap-3 sm:grid-cols-3">
+          {quickFacts.map((fact) => (
+            <div
+              key={fact.label}
+              className="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 bg-white dark:bg-slate-950 shadow-sm"
+            >
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+                {fact.label}
+              </p>
+              <p className="text-xl font-semibold text-slate-900 dark:text-white">
+                {fact.value}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-2xl bg-slate-100 dark:bg-slate-900/60 p-6 space-y-4">
+          <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+            How I approach product work
+          </p>
+          <ul className="space-y-2 text-slate-600 dark:text-slate-300">
+            {values.map((value) => (
+              <li key={value} className="flex items-start gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-500 dark:bg-slate-300" />
+                <span>{value}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="flex flex-wrap gap-3">
+          <Button asChild>
+            <a href="mailto:ronelvega31@gmail.com">Let’s collaborate</a>
+          </Button>
+          <Button variant="outline" asChild>
+            <a
+              href="/docs/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
+              Download resume
+            </a>
+          </Button>
+        </div>
+      </section>
     </ReusableMotion>
   );
 }
