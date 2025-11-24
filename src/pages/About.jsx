@@ -28,10 +28,10 @@ function About() {
                 imageSrc="/assets/profile.jpg"
                 altText="Ronel Vega"
                 captionText="Ronel Vega"
-                containerHeight="250px"
-                containerWidth="250px"
-                imageHeight="250px"
-                imageWidth="250px"
+                containerHeight="clamp(150px, 40vw, 250px)"
+                containerWidth="clamp(150px, 40vw, 250px)"
+                imageHeight="clamp(150px, 40vw, 250px)"
+                imageWidth="clamp(150px, 40vw, 250px)"
                 rotateAmplitude={12}
                 scaleOnHover={1.2}
                 showMobileWarning={false}
