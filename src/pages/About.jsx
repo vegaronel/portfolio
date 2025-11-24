@@ -1,10 +1,9 @@
-import React from "react";
 import ReusableMotion from "@/components/ReusableMotion";
 function About() {
   return (
     <ReusableMotion>
       <div id="about">
-        <div className="md:h-screen h-auto flex flex-col md:justify-center sm:justify-start py-4 md:py-0 space-y-2">
+        <div className="md:h-screen h-auto flex flex-col md:justify-center sm:justify-start md:py-0 space-y-2">
           <h2 className="text-md">About</h2>
           <p className="text-2xl font-semibold">Hi, I’m Ronel Vega.</p>
           <p className="">
