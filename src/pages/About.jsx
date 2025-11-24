@@ -112,3 +112,4 @@ function About() {
     </ReusableMotion>
   );
 }
+export default About;
