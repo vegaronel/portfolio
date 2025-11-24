@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import experiences from "@/data/experience";
 import SpotlightCard from "@/components/SpotlightCard";
+import { cn } from "@/lib/utils";
 
 function ExperienceList() {
   return (
