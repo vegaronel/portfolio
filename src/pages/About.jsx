@@ -20,21 +20,45 @@ function About() {
       <section id="about" className="space-y-6 md:py-12">
         <div className="space-y-3">
           <h2 className="text-base">About</h2>
-          <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">
-            Hey, I’m Ronel Vega — a developer who obsesses over the details that
-            make interfaces feel alive.
-          </h2>
-          <p className="text-slate-600 dark:text-slate-300">
-            I help teams launch clean, fast, accessible experiences using React
-            and modern tooling. Whether it’s building an anonymous messaging
-            platform or wiring up AI-powered job tracking dashboards, I love
-            translating ambiguous ideas into production-ready products.
-          </p>
-          <p className="text-slate-600 dark:text-slate-300">
-            Outside of code, you’ll find me jogging to reset and reading about
-            interaction design—anything that sharpens focus. That balance keeps
-            me energized to deliver thoughtful, pixel-perfect work.
-          </p>
+
+          <div className="relative">
+            <div className="float-right md:float-none lg:float-right md:ml-0 lg:ml-8 mb-8">
+              <TiltedCard
+                imageSrc="/assets/profile.jpg"
+                altText="Ronel Vega"
+                captionText="Ronel Vega"
+                containerHeight="250px"
+                containerWidth="250px"
+                imageHeight="250px"
+                imageWidth="250px"
+                rotateAmplitude={12}
+                scaleOnHover={1.2}
+                showMobileWarning={false}
+                showTooltip={true}
+                displayOverlayContent={true}
+              />
+            </div>
+
+            <div className="space-y-4">
+              <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">
+                Hey, I'm Ronel Vega — a developer who obsesses over the details
+                that make interfaces feel alive.
+              </h2>
+              <p className="text-slate-600 dark:text-slate-300">
+                I help teams launch clean, fast, accessible experiences using
+                React and modern tooling. Whether it's building an anonymous
+                messaging platform or wiring up AI-powered job tracking
+                dashboards, I love translating ambiguous ideas into
+                production-ready products.
+              </p>
+              <p className="text-slate-600 dark:text-slate-300">
+                Outside of code, you'll find me jogging to reset and reading
+                about interaction design—anything that sharpens focus. That
+                balance keeps me energized to deliver thoughtful, pixel-perfect
+                work.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-3">
@@ -87,5 +111,4 @@ function About() {
     </ReusableMotion>
   );
 }
-
 export default About;
