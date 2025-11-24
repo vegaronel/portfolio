@@ -1,13 +1,21 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Facebook, Linkedin, Github,Home, Briefcase, Mail, Moon, Sun, } from "lucide-react";
+import {
+  Facebook,
+  Linkedin,
+  Github,
+  Home,
+  Briefcase,
+  Mail,
+  Moon,
+  Sun,
+} from "lucide-react";
 import { useEffect, useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import { Switch } from "@/components/ui/switch";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { navItems, links } from "../helper/Sidebar.js";
-
 
 function Sidebar() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
@@ -67,14 +75,16 @@ function Sidebar() {
       <div className="flex gap-3">
         {links.map((item, index) => (
           <a
-          key={index}
+            key={index}
             href="https://web.facebook.com/vega.ronel"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Avatar >
-              <AvatarImage  src={<item.img />} />
-              <AvatarFallback className="bg-slate-800 dark:bg-slate-200">{<item.img className="dark:text-slate-800 text-slate-50" />}</AvatarFallback>
+            <Avatar>
+              <AvatarImage src={<item.img />} />
+              <AvatarFallback className="bg-slate-800 dark:bg-slate-200">
+                {<item.img className="dark:text-slate-800 text-slate-50" />}
+              </AvatarFallback>
             </Avatar>
           </a>
         ))}
