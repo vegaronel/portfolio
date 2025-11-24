@@ -17,9 +17,7 @@ function ExperienceList() {
     <div>
       {experiences.map((exp, index) => (
         <SpotlightCard
-          className={cn(
-            "p-0 bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900"
-          )}
+          className="p-0 bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900"
           spotlightColor="rgba(0, 229, 255, 0.2)"
         >
           <Card
