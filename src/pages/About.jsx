@@ -1,7 +1,6 @@
 import ReusableMotion from "@/components/ReusableMotion";
 import { Button } from "@/components/ui/button";
 import SpotlightCard from "@/components/SpotlightCard";
-import TiltedCard from "@/components/TiltedCard";
 
 function About() {
   const quickFacts = [
