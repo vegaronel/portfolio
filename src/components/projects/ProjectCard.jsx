@@ -1,4 +1,5 @@
-import { memo } from "react";
+import { memo, useContext, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   Card,
   CardContent,
@@ -12,15 +13,22 @@ import { Button } from "@/components/ui/button";
 import Github from "lucide-react/icons/github";
 import ExternalLink from "lucide-react/icons/external-link";
 import SpotlightCard from "@/components/SpotlightCard";
+import CircularGallery from "@/components/CircularGallery";
+import { ThemeContext } from "@/context/ThemeContext";
 
 const ProjectCard = memo(function ProjectCard({
   name,
+  images = [],
   status,
   description,
   technologies = [],
   github,
   liveDemo,
 }) {
+  const [showGallery, setShowGallery] = useState(false);
+  const { darkMode } = useContext(ThemeContext);
+  const hasImages = Array.isArray(images) && images.length > 0;
+
   return (
     <SpotlightCard
       className="p-0 bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-900"
@@ -41,14 +49,55 @@ const ProjectCard = memo(function ProjectCard({
           <CardDescription>{description}</CardDescription>
         </CardHeader>
         {!!technologies.length && (
-          <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {technologies.map((tech) => (
-                <Badge key={`${name}-${tech}`} variant="secondary">
-                  {tech}
-                </Badge>
-              ))}
+          <CardContent className="space-y-4">
+            <div className="flex flex-wrap items-center gap-2 justify-between">
+              <div className="flex flex-wrap gap-2">
+                {technologies.map((tech) => (
+                  <Badge key={`${name}-${tech}`} variant="secondary">
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+              {hasImages && (
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => setShowGallery((prev) => !prev)}
+                  aria-expanded={showGallery}
+                  aria-label={
+                    showGallery
+                      ? "Hide project gallery"
+                      : "View project gallery"
+                  }
+                >
+                  {showGallery ? "Hide Gallery" : "View Gallery"}
+                </Button>
+              )}
             </div>
+            {hasImages && (
+              <AnimatePresence initial={false}>
+                {showGallery && (
+                  <motion.div
+                    key="gallery"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 400 }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                    style={{ overflow: "hidden" }}
+                  >
+                    <div className="h-[400px] relative">
+                      <CircularGallery
+                        items={images}
+                        bend={0}
+                        textColor={darkMode ? "#ffffff" : "#000000"}
+                        borderRadius={0.05}
+                        scrollEase={0.02}
+                      />
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            )}
           </CardContent>
         )}
         <CardFooter className="flex justify-between gap-3">
